@@ -17,7 +17,7 @@ This library requires Go 1.9 or later.
 ### Server-side
 
 ```go
-import "github.com/d7561985/go-grpc-otlp"
+import "github.com/tel-io/otelgrpc"
 ...
     // Explicitly initiate metrics after otel meter register
     myMetrics := otelgrpc.NewServerMetrics()
@@ -39,7 +39,7 @@ import "github.com/d7561985/go-grpc-otlp"
 ### Client-side
 
 ```go
-import "github.com/d7561985/go-grpc-otlp"
+import "github.com/tel-io/otelgrpc"
 ...
     // Explicitly initiate metrics after otel meter register
     myMetrics := otelgrpc.NewClientMetrics()

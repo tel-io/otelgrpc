@@ -1,11 +1,11 @@
-module github.com/d7561985/go-grpc-otlp/example
+module github.com/tel-io/otelgrpc/example
 
 go 1.17
 
-replace github.com/d7561985/go-grpc-otlp => ../
+replace github.com/tel-io/otelgrpc => ../
 
 require (
-	github.com/d7561985/go-grpc-otlp v1.0.0
+	github.com/tel-io/otelgrpc v1.0.0
 	github.com/golang/protobuf v1.5.2
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.32.0
 	go.opentelemetry.io/otel v1.7.0

@@ -21,7 +21,7 @@ import (
 )
 
 const (
-	instrumentationName = "github.com/d7561985/go-grpc-otlp"
+	instrumentationName = "github.com/tel-io/otelgrpc"
 )
 
 // DefBuckets are the default Histogram buckets. The default buckets are

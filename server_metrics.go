@@ -3,7 +3,7 @@ package otelgrpc
 import (
 	"context"
 
-	"github.com/d7561985/go-grpc-otlp/packages/grpcstatus"
+	"github.com/tel-io/otelgrpc/packages/grpcstatus"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"

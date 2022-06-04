@@ -1,4 +1,4 @@
-module github.com/d7561985/go-grpc-otlp
+module github.com/tel-io/otelgrpc
 
 go 1.18
 

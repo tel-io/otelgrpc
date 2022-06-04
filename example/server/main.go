@@ -22,9 +22,9 @@ import (
 	"net"
 	"time"
 
-	otelgrpc "github.com/d7561985/go-grpc-otlp"
-	"github.com/d7561985/go-grpc-otlp/example/api"
-	"github.com/d7561985/go-grpc-otlp/example/config"
+	"github.com/tel-io/otelgrpc"
+	"github.com/tel-io/otelgrpc/example/api"
+	"github.com/tel-io/otelgrpc/example/config"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
