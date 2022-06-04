@@ -75,11 +75,12 @@ func (r *serverReporter) Handled(ctx context.Context, code codes.Code) {
 		dur := float64(time.Since(r.startTime).Milliseconds())
 		opt := bucketSelect(r.metrics.bucket, dur)
 
-		r.metrics.valueRecorders[serverHandledHistogram].Record(ctx, opt,
+		r.metrics.valueRecorders[serverHandledHistogram].Record(ctx, 1.,
 			append(r.metrics.labels,
 				attribute.String(AttrType, string(r.rpcType)),
 				attribute.String(AttrService, r.serviceName),
 				attribute.String(AttrMethod, r.methodName),
+				attribute.Float64(AttrBucket, opt),
 			)...,
 		)
 	}
