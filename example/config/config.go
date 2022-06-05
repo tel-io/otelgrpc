@@ -24,6 +24,7 @@ import (
 	stdoutTrace "go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
 	"go.opentelemetry.io/otel/metric/global"
 	"go.opentelemetry.io/otel/propagation"
+	"go.opentelemetry.io/otel/sdk/metric/aggregator/histogram"
 	"go.opentelemetry.io/otel/sdk/metric/selector/simple"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 
@@ -53,7 +54,9 @@ func Meter() (*controller.Controller, error) {
 	}
 	cont := controller.New(
 		processor.NewFactory(
-			simple.NewWithInexpensiveDistribution(),
+			// boundaries placed via aggregator option only
+			simple.NewWithHistogramDistribution(
+				histogram.WithExplicitBoundaries([]float64{.005, .01, .025, .05, .1, .25, .5, 1, 2.5, 5, 10})),
 			exporter,
 		),
 		controller.WithExporter(exporter),

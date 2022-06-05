@@ -21,7 +21,6 @@ import (
 type ClientMetrics struct {
 	meter                         metric.Meter
 	labels                        []attribute.KeyValue
-	bucket                        []float64
 	clientHandledHistogramEnabled bool
 
 	counters       map[string]syncint64.Counter
@@ -56,7 +55,6 @@ func NewClientMetrics(counterOpts ...Option) *ClientMetrics {
 func (m *ClientMetrics) configure(c *config) {
 	m.meter = c.Meter
 	m.labels = c.Labels
-	m.bucket = c.Bucket
 
 	m.clientHandledHistogramEnabled = true
 }

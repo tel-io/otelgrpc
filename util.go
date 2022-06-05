@@ -4,7 +4,6 @@
 package otelgrpc
 
 import (
-	"math"
 	"strings"
 )
 
@@ -23,16 +22,4 @@ func splitMethodName(fullMethodName string) (string, string) {
 		return fullMethodName[:i], fullMethodName[i+1:]
 	}
 	return "unknown", "unknown"
-}
-
-func bucketSelect(bucket []float64, dur float64) float64 {
-	var opt = math.Inf(1)
-
-	for _, bv := range bucket {
-		if bv > dur {
-			opt = bv
-		}
-	}
-
-	return opt
 }

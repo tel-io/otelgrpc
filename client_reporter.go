@@ -90,15 +90,13 @@ func (r *clientReporter) startTimer(ctx context.Context, metric string, startTim
 		return
 	}
 
-	dur := float64(time.Since(startTime).Milliseconds())
-	opt := bucketSelect(r.metrics.bucket, dur)
+	dur := float64(time.Since(startTime).Seconds())
 
-	r.metrics.valueRecorders[metric].Record(ctx, 1.,
+	r.metrics.valueRecorders[metric].Record(ctx, dur,
 		append(r.metrics.labels,
 			attribute.String(AttrType, string(r.rpcType)),
 			attribute.String(AttrService, r.serviceName),
 			attribute.String(AttrMethod, r.methodName),
-			attribute.Float64(AttrBucket, opt),
 		)...,
 	)
 }

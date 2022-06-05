@@ -28,7 +28,6 @@ const (
 	AttrService = "grpc_service"
 	AttrMethod  = "grpc_method"
 	AttrCode    = "grpc_code"
-	AttrBucket  = "le"
 )
 
 // ServerMetrics represents a collection of metrics to be registered on a

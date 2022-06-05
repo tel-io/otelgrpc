@@ -24,14 +24,6 @@ const (
 	instrumentationName = "github.com/tel-io/otelgrpc"
 )
 
-// DefBuckets are the default Histogram buckets. The default buckets are
-// tailored to broadly measure the response time (in milliseconds) of a network
-// service. Most likely, however, you will be required to define buckets
-// customized to your use case.
-var (
-	DefBuckets = []float64{5, 10, 25, 50, 100, 250, 500, 1000, 2500, 5000, 10000}
-)
-
 // config represents the configuration options available
 type config struct {
 	Meter         metric.Meter
@@ -59,7 +51,6 @@ func (o optionFunc) apply(c *config) {
 func newConfig(opts ...Option) *config {
 	c := &config{
 		MeterProvider: global.MeterProvider(),
-		Bucket:        DefBuckets,
 	}
 	for _, opt := range opts {
 		opt.apply(c)
