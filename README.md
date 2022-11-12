@@ -1,3 +1,6 @@
+# DEPRECATED
+moved https://github.com/tel-io/instrumentation/tree/main/module/otelgrpc
+
 # Go gRPC Interceptors for OTLP monitoring
 
 Port of metric library - https://github.com/grpc-ecosystem/go-grpc-prometheus onto OTLP protocol
